@@ -1,1 +1,14 @@
-<Solution />
+<Solution>
+  <Folder Name="/Api/">
+    <Project Path="PokedecCore.Api/PokedecCore.Api.csproj" />
+  </Folder>
+  <Folder Name="/Application/">
+    <Project Path="PokedexCore.Application/PokedexCore.Application.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="PokedexCore.Domain/PokedexCore.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="PokedexCore.Infrastructure/PokedexCore.Infrastructure.csproj" />
+  </Folder>
+</Solution>
