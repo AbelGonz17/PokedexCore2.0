@@ -1,18 +1,19 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PokedexCore.Domain.Entities;
+using PokedexCore.Domain.Interfaces;
 using System.Reflection;
 
 namespace PokedexCore.Infrastructure.Context
 {
-    public class PokedexCoreDbContext : IdentityDbContext
+    public class PokedexCoreDbContext : IdentityDbContext, IUnitOfWork
     {
-        public PokedexCoreDbContext(DbContextOptions options) : base(options)
-        {
-        }
+        private readonly IMediator _mediator;
 
-        protected PokedexCoreDbContext()
+        public PokedexCoreDbContext(DbContextOptions options, IMediator mediator ) : base(options)
         {
+           _mediator = mediator;
         }
 
         public DbSet<Pokemon> Pokemons { get; set; }
